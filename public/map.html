@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .order-details {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .otp-container {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Map</h1>
+    
+    <div class="order-details">
+        <p><strong>Name:</strong> Suresh</p>
+        <p><strong>Breakdown Issue:</strong> Brake pad replacement</p>
+        <p><strong>Distance:</strong> 1.5 km</p>
+        
+        <div class="otp-container" id="otp-container">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button id="otp-button" onclick="validateOTP()">Next</button>
+        </div>
+
+        <div id="map-buttons" class="hidden">
+            <button onclick="openGoogleMaps()">View Location on Google Maps</button>
+            <button onclick="goToCompletion()">Next to Completion</button>
+        </div>
+    </div>
+
+    <script>
+        const correctOTP = '1234'; // Set the correct OTP
+
+        function validateOTP() {
+            const otpInput = document.getElementById('otp').value;
+            if (otpInput === correctOTP) {
+                document.getElementById('otp-container').classList.add('hidden'); // Hide OTP container
+                document.getElementById('map-buttons').classList.remove('hidden'); // Show map buttons
+            } else {
+                alert('Invalid OTP. Please try again.'); // Alert for incorrect OTP
+            }
+        }
+
+        function openGoogleMaps() {
+            const latitude = 17.4843; // Example latitude for Chinthal
+            const longitude = 78.4735; // Example longitude for Chinthal
+            const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+            window.open(url, '_blank'); // Open Google Maps in a new tab
+        }
+
+        function goToCompletion() {
+            window.location.href = 'completion.html'; // Redirect to completion.html
+        }
+    </script>
+</body>
+</html>

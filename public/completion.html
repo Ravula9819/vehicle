@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Completed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px; /* Increased font size for the cost message */
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px; /* Added margin for spacing */
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+            text-align: left; /* Align text to the left for payment methods */
+        }
+
+        .qr-code {
+            margin-top: 10px;
+            width: 100px; /* Set width for QR code image */
+            height: 100px; /* Set height for QR code image */
+        }
+    </style>
+</head>
+<body>
+    <h1>You've Completed Your Order!</h1>
+    <p>The total cost is <strong>300 Rs</strong>. Great job!</p>
+    
+    <div class="payment-methods">
+        <h3>Payment Methods:</h3>
+        <p>1. Collect Cash</p>
+        <p>2. QR Code</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAwezRRmbnUqJh9gH3bwbnIJjt7l5nCj21sA&s" alt="QR Code" class="qr-code"> <!-- Placeholder for QR code -->
+    </div>
+
+    <button onclick="searchOrders()">Search for Another Order</button>
+
+    <script>
+        function searchOrders() {
+            // Redirect to the go online page
+            window.location.href = 'go_online.html'; // Change to your go online page
+        }
+    </script>
+</body>
+</html>

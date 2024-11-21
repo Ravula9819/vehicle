@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center; /* Center the heading */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center; /* Center the orders container */
+            gap: 20px; /* Space between the order cards */
+            width: 80%; /* Adjust width as needed */
+        }
+
+        .order-details {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Set fixed width for each order */
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Styles for the Go Offline button */
+        .go-offline-btn {
+            position: absolute; /* Position the button absolutely */
+            top: 20px; /* Adjust top position */
+            right: 20px; /* Adjust right position */
+            background-color: #dc3545; /* Red color for Go Offline */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .go-offline-btn:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <button class="go-offline-btn" onclick="goOffline()">Go Offline</button>
+
+    <h1>Order Details</h1>
+    
+    <div class="container">
+        <!-- First Order -->
+        <div class="order-details">
+            <p><strong>Name:</strong> Suresh</p>
+            <p><strong>Phone No:</strong> 9876785432</p>
+            <p><strong>Breakdown Issue:</strong> Brake pad replacement</p>
+            <p><strong>Location:</strong> Chinthal</p>
+            <p><strong>Distance:</strong> 1.5 km</p>
+            <button onclick="acceptOrder('map.html')">Accept Order</button>
+        </div>
+
+        <!-- Second Order -->
+        <div class="order-details">
+            <p><strong>Name:</strong> Ramesh</p>
+            <p><strong>Phone No:</strong> 8907634212</p>
+            <p><strong>Breakdown Issue:</strong> Mechanical repairs</p>
+            <p><strong>Location:</strong> Shapur</p>
+            <p><strong>Distance:</strong> 2.5 km</p>
+            <button onclick="acceptOrder('map.html')">Accept Order</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptOrder(mapPage) {
+            // Redirect to the respective map page after accepting the order
+            window.location.href = mapPage;
+        }
+
+        function goOffline() {
+            // Redirect to the index page
+            window.location.href = 'index.html'; // Change to your homepage
+        }
+    </script>
+</body>
+</html>

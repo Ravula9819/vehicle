@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Details</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            height: 100vh; /* Full screen height */
+            justify-content: center; /* Center vertically */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #28a745;
+            font-size: 28px; /* Increased font size */
+        }
+
+        .mechanic-details {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px; /* Adjusted max-width for larger screen */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mechanic-details img {
+            width: 100%; /* Full width */
+            max-width: 300px; /* Set max width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 15px; /* Space below image */
+        }
+
+        .address {
+            font-size: 18px; /* Increased font size */
+            margin: 10px 0; /* Margin around the address */
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+            margin-top: 10px; /* Space above button */
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #quote {
+            margin-top: 20px;
+            font-size: 20px; /* Increased font size */
+            text-align: center; /* Center the quote */
+        }
+
+        .otp {
+            font-size: 20px; /* Increased font size for OTP */
+            margin-top: 10px; /* Space above OTP */
+            color: #ffc107; /* Color for the OTP */
+        }
+
+        .verified-button {
+            margin-top: 10px; /* Space above Verified button */
+        }
+    </style>
+</head>
+<body>
+    <h2>Mechanic Details</h2>
+
+    <div class="mechanic-details">
+        <img src="https://scitexas.edu/wp-content/uploads/2020/01/how-much-do-mechanics-make-in-texas-SCITexas.edu_-1.jpg" alt="Mechanic Image"> <!-- Replace with your image path -->
+        <h3>Mechanic Name: Suresh</h3>
+        <p class="address">Phone: 9876543210</p>
+        <p class="address">Shop Address: Chinthal Main Street</p>
+
+        <div class="otp">OTP: 1234</div> <!-- OTP section added -->
+        
+        <a href="https://maps.app.goo.gl/1RMnAkddREJcv8hDA" target="_blank">
+            <button>View Location</button>
+        </a>
+        
+        <a href="report.html">
+            <button>Search Manually</button> <!-- Link to report.html -->
+        </a>
+
+        <a href="payment.html" class="verified-button">
+            <button>Verified</button> <!-- Redirects to payment page -->
+        </a>
+    </div>
+
+    <div id="quote">
+        <p>Your problem has been reported, help is on the way, get back on the road in the next few minutes.</p>
+    </div>
+</body>
+</html>

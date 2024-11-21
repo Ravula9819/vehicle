@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Go Online</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px; /* Added margin for spacing */
+        }
+
+        .go-online {
+            background-color: #28a745; /* Green color for Go Online */
+        }
+
+        .go-offline {
+            background-color: #dc3545; /* Red color for Go Offline */
+        }
+
+        .searching {
+            display: none;
+            font-size: 20px;
+            margin-top: 20px;
+            color: #ffc107; /* Yellow for attention */
+        }
+    </style>
+</head>
+<body>
+    <h1>GO ON DUTY TO START EARNING</h1>
+    <button id="statusBtn" class="go-online" onclick="toggleStatus()">GO ONLINE</button>
+    <div class="searching">Searching for orders...</div>
+
+    <script>
+        function toggleStatus() {
+            const button = document.getElementById('statusBtn');
+            const searchingMessage = document.querySelector('.searching');
+
+            if (button.classList.contains('go-online')) {
+                // Change to offline
+                button.classList.remove('go-online');
+                button.classList.add('go-offline');
+                button.textContent = 'GO OFFLINE';
+                // Show the searching message
+                searchingMessage.style.display = 'block';
+                // Set the status in localStorage
+                localStorage.setItem('status', 'online');
+                // Redirect to orders page after 2 seconds to simulate being online
+                setTimeout(() => {
+                    window.location.href = 'orders.html'; // Redirect to the orders page
+                }, 2000);
+            } else {
+                // Change to online
+                button.classList.remove('go-offline');
+                button.classList.add('go-online');
+                button.textContent = 'GO ONLINE';
+                searchingMessage.style.display = 'none';
+                // Clear the status in localStorage
+                localStorage.removeItem('status');
+            }
+        }
+
+        // Check local storage on page load
+        window.onload = function() {
+            const status = localStorage.getItem('status');
+            const button = document.getElementById('statusBtn');
+            const searchingMessage = document.querySelector('.searching');
+
+            if (status === 'online') {
+                button.classList.remove('go-online');
+                button.classList.add('go-offline');
+                button.textContent = 'GO OFFLINE';
+                searchingMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
